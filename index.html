@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0C0C0D">
+<meta name="description" content="צוות ההפקה של בית הספר ערמונים פותח את שעריו. בחרו חפץ, ספרו עליו סיפור בסרטון של עד דקה.">
+<title>צוות הפקה ערמונים · משימת כניסה</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230C0C0D%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228%22%20fill%3D%22none%22%20stroke%3D%22%23FFC93C%22%20stroke-width%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%223%22%20fill%3D%22%23FFC93C%22%2F%3E%3C%2Fsvg%3E">
+
+<!-- כתובת טופס ההגשה מוגדרת ב-href של הכפתור "העלאת הסרטון" למטה.
+     להחלפת הטופס בשנה הבאה — לשנות שם בלבד. -->
+
+<style>
+/* ---------- fonts (self-hosted, no external requests) ---------- */
+@font-face{font-family:Secular;src:url(fonts/secular-hebrew.woff2)format('woff2');
+  font-weight:400;font-display:swap;
+  unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:Secular;src:url(fonts/secular-latin.woff2)format('woff2');
+  font-weight:400;font-display:swap;
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2212}
+@font-face{font-family:Heebo;src:url(fonts/heebo-hebrew.woff2)format('woff2');
+  font-weight:300 800;font-display:swap;
+  unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:Heebo;src:url(fonts/heebo-latin.woff2)format('woff2');
+  font-weight:300 800;font-display:swap;
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2212}
+
+/* ---------- tokens ---------- */
+:root{
+  --ground:#0C0C0D;
+  --surface:#17171A;
+  --cream:#F4F0E6;
+  --dim:#9C9791;
+  --accent:#FFC93C;
+  --rule:#2A2A2E;
+
+  --display:Secular,Heebo,system-ui,"Segoe UI",Arial,sans-serif;
+  --sans:Heebo,system-ui,"Segoe UI",Arial,sans-serif;
+
+  --gut:clamp(1.25rem,5vw,3.5rem);
+  --step:clamp(3rem,9vw,5.5rem);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--cream);
+  font:400 1.0625rem/1.65 var(--sans);
+  -webkit-font-smoothing:antialiased;
+  overflow-wrap:break-word;
+}
+
+/* ---------- browser surfaces ---------- */
+::selection{background:var(--accent);color:var(--ground)}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:2px}
+html{scrollbar-color:#3A3A40 var(--ground)}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--ground)}
+::-webkit-scrollbar-thumb{background:#3A3A40;border:3px solid var(--ground);border-radius:99px}
+
+/* ---------- shell ---------- */
+.wrap{max-width:74rem;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+
+/* ---------- masthead ---------- */
+.masthead{
+  display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:baseline;
+  padding-top:1.25rem;padding-bottom:1.1rem;
+  border-bottom:1px solid var(--rule);
+  font-size:.8125rem;font-weight:600;letter-spacing:.08em;
+  color:var(--dim);
+}
+.masthead b{color:var(--cream);font-weight:600}
+.masthead span{margin-right:auto;margin-inline-start:auto;color:var(--accent)}
+
+/* ---------- opening ---------- */
+.open{padding-top:clamp(2.75rem,10vw,6rem)}
+h1{
+  font:400 clamp(2.4rem,9.5vw,5rem)/1.05 var(--display);
+  letter-spacing:-.015em;
+  margin:0;
+  text-wrap:balance;
+}
+h1 .hl{color:var(--accent)}
+.lead{
+  font:300 clamp(1.1875rem,4.6vw,1.625rem)/1.5 var(--sans);
+  color:var(--cream);
+  margin:clamp(1.5rem,4vw,2.25rem) 0 0;
+  max-width:32ch;
+  text-wrap:pretty;
+}
+
+.due{
+  display:inline-block;
+  margin-top:clamp(1.75rem,5vw,2.5rem);
+  padding:.6rem 1.1rem .65rem;
+  background:var(--accent);color:var(--ground);
+  font-size:.9375rem;font-weight:800;letter-spacing:.02em;
+  border-radius:2px;
+}
+
+/* ---------- section rhythm ---------- */
+section{padding-top:var(--step);padding-bottom:0}
+section:last-of-type{padding-bottom:var(--step)}
+h2{
+  font:400 clamp(1.5rem,5.5vw,2.25rem)/1.15 var(--display);
+  letter-spacing:-.01em;
+  margin:0 0 1.75rem;
+}
+p{margin:0 0 1.05rem;max-width:36rem}
+p:last-child{margin-bottom:0}
+
+/* ---------- instructions ---------- */
+.steps{list-style:none;margin:0;padding:0;max-width:40rem;
+  border-top:1px solid var(--rule)}
+.steps li{
+  display:grid;grid-template-columns:1fr;gap:.35rem;
+  padding-top:1.5rem;padding-bottom:1.5rem;
+  border-bottom:1px solid var(--rule);
+}
+@media(min-width:34rem){
+  .steps li{grid-template-columns:6.5rem 1fr;gap:.3rem 1.5rem}
+  .steps b{padding-top:.4rem}
+}
+.steps b{
+  font-weight:800;font-size:.8125rem;letter-spacing:.1em;
+  color:var(--accent);
+}
+.steps p{
+  margin:0;max-width:34rem;
+  font-size:clamp(1.0625rem,3.6vw,1.1875rem);
+  line-height:1.6;font-weight:300;color:var(--cream);
+}
+
+/* ---------- object plates ---------- */
+.plates{
+  list-style:none;margin:0;padding:0;max-width:34rem;
+  display:grid;gap:clamp(1.5rem,4vw,2rem);grid-template-columns:1fr;
+}
+@media(min-width:60rem){
+  .plates{grid-template-columns:repeat(5,minmax(0,1fr));max-width:none;gap:1.25rem}
+}
+
+.plate figure{margin:0}
+.plate .frame{
+  position:relative;display:block;
+  aspect-ratio:3/2;
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:3px;
+  overflow:hidden;
+}
+.plate img{width:100%;height:100%;object-fit:cover;display:block}
+.plate .no{
+  position:absolute;top:0;right:0;
+  inset-block-start:0;inset-inline-start:auto;
+  padding:.3rem .5rem .35rem;
+  background:var(--ground);color:var(--accent);
+  font:800 .75rem/1 var(--sans);
+  font-variant-numeric:tabular-nums;
+  border-bottom-left-radius:3px;
+}
+.plate figcaption{padding-top:.75rem}
+.plate .name{
+  display:block;
+  font:400 1.25rem/1.2 var(--display);
+  color:var(--cream);
+}
+
+/* ---------- submit ---------- */
+.cta{
+  display:inline-block;margin-top:.5rem;
+  padding:1rem 2.25rem 1.05rem;
+  background:var(--accent);color:var(--ground);
+  font:800 1.0625rem/1 var(--sans);letter-spacing:.01em;
+  text-decoration:none;border-radius:2px;
+  transition:background .2s cubic-bezier(.2,.7,.3,1),transform .2s cubic-bezier(.2,.7,.3,1);
+}
+.cta:hover{background:#FFD968}
+.cta:active{transform:translateY(1px)}
+.hint{
+  margin-top:1.25rem;max-width:34rem;
+  font-size:.9375rem;line-height:1.6;font-weight:300;color:var(--dim);
+  padding-right:1rem;padding-inline-start:1rem;
+  border-right:1px solid var(--rule);border-inline-start:1px solid var(--rule);
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--rule);
+  padding-top:1.75rem;padding-bottom:2.75rem;
+  font-size:.75rem;line-height:1.7;color:var(--dim);
+}
+footer a{color:var(--dim);text-decoration:underline;text-underline-offset:.18em;
+  text-decoration-thickness:1px}
+footer a:hover{color:var(--accent)}
+
+/* ---------- the one authored moment ----------
+   The object lights up when you consider it. Purely additive — nothing
+   here can hide content, so the plates need no JavaScript to be seen. */
+@media(prefers-reduced-motion:no-preference){
+  .plate .frame{transition:border-color .3s cubic-bezier(.16,1,.3,1)}
+  .plate img{transition:transform .5s cubic-bezier(.16,1,.3,1),filter .35s cubic-bezier(.16,1,.3,1)}
+}
+@media(hover:hover){
+  .plate:hover .frame{border-color:var(--accent)}
+  .plate:hover img{transform:scale(1.05);filter:brightness(1.08)}
+}
+.plate:active img{transform:scale(.99)}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <b>בית הספר ערמונים</b>
+    <span>צוות הפקה</span>
+  </header>
+
+  <div class="open">
+    <h1>צוות הפקה <bdi dir="ltr">26/7</bdi><br><span class="hl">פותח את שעריו</span></h1>
+    <p class="lead">
+      בחרו חפץ אחד מהתמונות שכאן, וספרו עליו סיפור מעניין / מפתיע / מסקרן
+      בסרטון של עד דקה.
+    </p>
+    <p class="due">מועד הגשה &nbsp;<bdi dir="ltr">8.10.2026</bdi></p>
+  </div>
+
+  <section>
+    <ul class="steps">
+      <li>
+        <b>אורך</b>
+        <p>עד דקה. לא שנייה יותר.</p>
+      </li>
+      <li>
+        <b>צילום</b>
+        <p>שוט אחד רצוף, או כמה שוטים שמורכבים יחד. שתי הדרכים לגיטימיות לגמרי.</p>
+      </li>
+      <li>
+        <b>עריכה</b>
+        <p>מותר לערוך, ומותר להיעזר בחבר שיודע לערוך. הסיפור צריך להישאר שלכם.</p>
+      </li>
+      <li>
+        <b>החפץ</b>
+        <p>החפצים האלה נמצאים כמעט בכל בית. צלמו את שלכם, או המציאו סיפור על זה שבתמונה.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>החפצים</h2>
+    <p>חמישה חפצים. בחרו אחד, ותוכלו לומר לי את המספר שלו כשתגישו.</p>
+
+    <ul class="plates">
+
+      <li class="plate"><figure>
+        <div class="frame"><span class="no">01</span>
+          <img src="images/01-mug.jpg" alt="ספל קפה לבן עומד על משטח עץ" loading="lazy" decoding="async" width="900" height="600"></div>
+        <figcaption><span class="name">ספל קפה</span></figcaption>
+      </figure></li>
+
+      <li class="plate"><figure>
+        <div class="frame"><span class="no">02</span>
+          <img src="images/02-pen.jpg" alt="תקריב של ציפורן עט נובע מוזהב" loading="lazy" decoding="async" width="900" height="600"></div>
+        <figcaption><span class="name">עט כתיבה</span></figcaption>
+      </figure></li>
+
+      <li class="plate"><figure>
+        <div class="frame"><span class="no">03</span>
+          <img src="images/03-flower.jpg" alt="פרח סגול עגול על גבעול ארוך בשדה" loading="lazy" decoding="async" width="900" height="600"></div>
+        <figcaption><span class="name">פרח</span></figcaption>
+      </figure></li>
+
+      <li class="plate"><figure>
+        <div class="frame"><span class="no">04</span>
+          <img src="images/04-salt.jpg" alt="שתי מלחיות זכוכית עומדות על שולחן" loading="lazy" decoding="async" width="900" height="600"></div>
+        <figcaption><span class="name">מלחייה</span></figcaption>
+      </figure></li>
+
+      <li class="plate"><figure>
+        <div class="frame"><span class="no">05</span>
+          <img src="images/05-lamp.jpg" alt="מנורת שולחן מתכווננת מעל שולחן כתיבה ליד חלון" loading="lazy" decoding="async" width="900" height="600"></div>
+        <figcaption><span class="name">מנורת שולחן</span></figcaption>
+      </figure></li>
+
+    </ul>
+  </section>
+
+  <section>
+    <h2>איך מגישים</h2>
+    <p>מעלים את הסרטון לטופס. הוא מגיע אליי ישירות, ואין צורך לשלוח שום דבר נוסף.</p>
+    <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSexsDktlXfq3W2JZN6AMetVoq6DtLDMKdflGtRDeqwUaWDRNA/viewform">העלאת הסרטון</a>
+    <p class="hint">
+      אם הטופס מבקש להתחבר — התחברו עם חשבון הגוגל של בית הספר, אותו חשבון
+      שאתם משתמשים בו בכיתה. אם משהו לא עובד, אל תשלחו את הסרטון בדרך אחרת —
+      פשוט תגידו לי ונסדר את זה יחד.
+    </p>
+  </section>
+
+  <footer>
+    תמונות ברישיון חופשי:
+    ספל, עט, פרח ומנורה — Unsplash דרך Wikimedia Commons (CC0).
+    מלחייה — <bdi dir="ltr">&ldquo;Salt and pepper&rdquo;</bdi> מאת Sierra,
+    <a href="https://creativecommons.org/licenses/by/2.0/" rel="noopener">CC BY 2.0</a>.
+  </footer>
+
+</div>
+
+</body>
+</html>
