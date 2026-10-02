@@ -25,7 +25,7 @@ PRODUCT.md          אמת המוצר — למי זה מיועד ומה אסור
 כפתור "העלאת הסרטון" בעמוד מחובר לטופס:
 
 ```
-https://docs.google.com/forms/d/e/1FAIpQLSexsDktlXfq3W2JZN6AMetVoq6DtLDMKdflGtRDeqwUaWDRNA/viewform
+https://docs.google.com/forms/d/e/1FAIpQLScnVP94hIksFUzu0wigQcHGF9QjMwMeqWZ82X7lC5eXSmt-4w/viewform
 ```
 
 הכתובת מופיעה **פעם אחת בלבד** בקובץ, ב-`href` של הכפתור. להחלפת הטופס
